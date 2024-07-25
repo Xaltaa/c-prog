@@ -1,0 +1,20 @@
+#include<stdio.h>
+#include<math.h>
+int main(){
+	int i;
+	float z=0.0,r1=0.0,xysum=0.0,xsum=0.0,ysum=0.0,x2sum=0.0,y2sum=0.0,n=7.0,r;
+	float x[7]={34.22,39.87,41.85,43.23,40.06,53.29,53.29};
+	float y[7]={102.43,100.93,97.43,97.81,98.32,98.32,100.07};
+	for(i=0;i<7;i++){
+		xysum=xysum+(x[i]*y[i]);
+		xsum=xsum+x[i];
+		ysum=ysum+y[i];
+		x2sum=x2sum+pow(x[i],2);
+		y2sum=y2sum+pow(y[i],2);
+	}
+
+	r=(xysum-xsum*ysum)/sqrt((n*x2sum-pow(xsum,2))*(n*y2sum-pow(ysum,2)));
+	
+	printf("%f", r);
+
+}
